@@ -4,5 +4,7 @@ public class Messages {
 	public class Init {
 		public static final String START = "Initializing WaveLine " + GameInfo.VERSION;
 		public static final String GUI = "Initializing GUIs...";
+
+        public static final String SHUTDOWN = "Shutting down WaveLine " + GameInfo.VERSION;
 	}
 }
