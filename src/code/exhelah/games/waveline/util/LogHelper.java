@@ -7,7 +7,7 @@ import code.exhelah.games.waveline.reference.Messages;
 
 public class LogHelper {
 	public static String getLogPrefix(String type) {
-		return "[WaveLine] [" + getTime() + "] " + type.toUpperCase() + ": ";
+		return "[" + getTime() + "] [WaveLine] " + type.toUpperCase() + ": ";
 	}
 	
 	private static String getTime() {
