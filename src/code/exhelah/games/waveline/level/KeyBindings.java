@@ -5,7 +5,6 @@ import java.awt.Component;
 import javax.swing.KeyStroke;
 
 public class KeyBindings {
-<<<<<<< HEAD
 	Object space;
 	public static void init() {
 		KeyStroke.getKeyStroke("Space");
@@ -13,10 +12,5 @@ public class KeyBindings {
 	
 	public Object getSpaceInput() {
 		return space;
-=======
-	public void init() {
-		keyBindings.getInputMap().put(KeyStroke.getKeyStroke("Space"),
-			"spacePressed");
->>>>>>> origin/master
 	}
 }

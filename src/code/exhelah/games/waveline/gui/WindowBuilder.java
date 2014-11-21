@@ -4,12 +4,9 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Image;
-<<<<<<< HEAD
 import java.awt.Toolkit;
 import java.awt.image.*;
 import java.awt.MediaTracker;
-=======
->>>>>>> origin/master
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -35,10 +32,7 @@ public class WindowBuilder extends JFrame {
                 System.exit(0);
             }
         });
-<<<<<<< HEAD
         f.setIconImage(new ImageIcon(ClassPaths.Assets.WINDOW_DEBUG_ICON).getImage());
-=======
->>>>>>> origin/master
         f.getContentPane().setBackground(Colors.WINDOW_BACKGROUND);
         f.setSize(width, height);
         f.setVisible(true);
