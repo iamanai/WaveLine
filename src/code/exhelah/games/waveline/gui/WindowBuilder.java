@@ -25,6 +25,7 @@ public class WindowBuilder extends JFrame {
 	int width = 0, height = 0;
 	
 	public WindowBuilder(int width, int height) {
+        System.out.println(LogHelper.getLogPrefix("debug") + Messages.Init.WINDOW);
         JFrame f = new JFrame("WaveLine " + GameInfo.VERSION);
         f.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -32,7 +33,7 @@ public class WindowBuilder extends JFrame {
                 System.exit(0);
             }
         });
-        f.setIconImage(new ImageIcon(ClassPaths.Assets.WINDOW_DEBUG_ICON).getImage());
+        f.setIconImage(Images.getImage("debug_icon.png"));
         f.getContentPane().setBackground(Colors.WINDOW_BACKGROUND);
         f.setSize(width, height);
         f.setVisible(true);
