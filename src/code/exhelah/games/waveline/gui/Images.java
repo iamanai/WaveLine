@@ -16,8 +16,8 @@ public class Images {
     static LinkedList<String> imageNames = new LinkedList<String> ();
 
     public static void init() throws IOException {
-        System.out.println(LogHelper.getLogPrefix("debug") + Messages.Init.IMAGES);
-        System.out.println(LogHelper.getLogPrefix("debug") + "Root file path: " + ClassPaths.ROOT_FILE_PATH);
+        LogHelper.debug(Messages.Init.IMAGES);
+
         try {
             addImage(ClassPaths.Assets.WINDOW_DEBUG_ICON, "debug_icon.png");
         } catch (IOException e) {
