@@ -15,14 +15,11 @@ public class Images {
     static LinkedList<Image> images = new LinkedList<Image> ();
     static LinkedList<String> imageNames = new LinkedList<String> ();
 
-    public static void init() throws IOException {
-        LogHelper.debug(Messages.Init.IMAGES);
-
-        try {
-            addImage(ClassPaths.Assets.WINDOW_DEBUG_ICON, "debug_icon.png");
-        } catch (IOException e) {
-            throw new IOException("Image file does not exist");
-        }
+    public static void init() throws Exception {
+        LogHelper.debug(Messages.Init.IMAGES, 1, "GUI");
+        
+        addImage(ClassPaths.Assets.WINDOW_DEBUG_ICON, "debug_icon.png");
+        addImage(ClassPaths.Assets.LEVEL_WAVE_SECTION, "wave_section.png");
     }
 
 	public static Image getImage(String fileName) {
@@ -35,8 +32,14 @@ public class Images {
         return images.get(index);
 	}
 
-    private static void addImage(String filePath, String fileName) throws IOException {
-        images.add(ImageIO.read(new File(ClassPaths.Assets.WINDOW_DEBUG_ICON)));
-        imageNames.add(fileName);
+    private static void addImage(String filePath, String fileName) throws Exception {
+        try {
+        	images.add(ImageIO.read(new File(ClassPaths.Assets.WINDOW_DEBUG_ICON)));
+        	imageNames.add(fileName);
+            LogHelper.debug(Messages.Gui.IMAGE_REGISTERED(fileName, filePath), 2, "GUI");
+        } catch (IOException e) {
+        	throw new IndexOutOfBoundsException(Messages.Gui.IMAGE_FILE_NOT_FOUND(filePath));
+        }
+        
     }
 }

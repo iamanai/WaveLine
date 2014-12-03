@@ -7,19 +7,25 @@ package code.exhelah.games.waveline;
 
 import code.exhelah.games.waveline.gui.GuiHandler;
 import code.exhelah.games.waveline.level.KeyBindings;
+import code.exhelah.games.waveline.level.LevelHandler;
 import code.exhelah.games.waveline.reference.Messages;
 import code.exhelah.games.waveline.util.LogHelper;
 
 import java.io.IOException;
 
 public class WaveLine {
-	public static void main(String[] args) throws IOException {
-        LogHelper.info(Messages.Init.START);
-        LogHelper.debug(Messages.ROOT_FILE_PATH);
+	public static void main(String[] args) throws Exception {
+        LogHelper.info(Messages.Init.START, "Main");
+        LogHelper.debug(Messages.ROOT_FILE_PATH, 2, "Main");
 		
+        LevelHandler.init();
 		GuiHandler.init();
-		KeyBindings.init();
 
-		LogHelper.info(Messages.Init.COMPLETE);
+		LogHelper.info(Messages.Init.COMPLETE, "Main");
+	}
+	
+	public static void terminate() {
+		LogHelper.info(Messages.Init.SHUTDOWN, "Main");
+		System.exit(0);
 	}
 }
