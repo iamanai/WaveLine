@@ -1,9 +1,9 @@
-package code.exhelah.games.waveline.util;
+package exhelah.school_09.waveline.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import code.exhelah.games.waveline.reference.GameInfo;
+import exhelah.school_09.waveline.reference.GameInfo;
 
 public class LogHelper {
 	public static void info(String message) {
